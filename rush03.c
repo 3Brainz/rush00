@@ -10,12 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
-void	rush03(int r, int c);
-
-int		main(void)
+void	print_character(int m_x, int m_y, int x, int y)
 {
-	rush03(10, 1);
-	return (0);
+	if (x == 1 && (y == 1 || y == m_y))
+	{
+		ft_putchar('A');
+	}
+	else if (x == m_x && (y == 1 || y == m_y))
+	{
+		ft_putchar('C');
+	}
+	else if (y > 1 && y < m_y && x > 1 && x < m_x)
+	{
+		ft_putchar(' ');
+	}
+	else
+	{
+		ft_putchar('B');
+	}
+}
+
+void	rush03(int max_x, int max_y)
+{
+	int x;
+	int y;
+
+	x = 1;
+	y = 1;
+	if (max_x > 0 && max_y > 0)
+	{
+		while (y <= max_y)
+		{
+			while (x <= max_x)
+			{
+				print_character(max_x, max_y, x, y);
+				x++;
+			}
+			y++;
+			x = 1;
+			ft_putchar('\n');
+		}
+	}
 }
