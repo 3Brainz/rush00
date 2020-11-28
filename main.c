@@ -12,10 +12,10 @@
 
 #include <unistd.h>
 
-void	rush00(int r, int c);
+void	rush02(int r, int c);
 
 int		main(void)
 {
-	rush00(1, 1);
+	rush02(10, 10);
 	return (0);
 }

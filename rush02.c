@@ -14,13 +14,13 @@ void	ft_putchar(char c);
 
 void	print_character(int m_x, int m_y, int x, int y)
 {
-	if ((x > 1 && x < m_x) && (y == 1 || y == m_y))
+	if ((x == 1 || x == m_x) && (y == 1))
 	{
-		ft_putchar('-');
+		ft_putchar('A');
 	}
-	else if ((y > 1 && y < m_y) && (x == 1 || x == m_x))
+	else if ((x == 1 || x == m_x) && (y == m_y))
 	{
-		ft_putchar('|');
+		ft_putchar('C');
 	}
 	else if (y > 1 && y < m_y && x > 1 && x < m_x)
 	{
@@ -28,11 +28,11 @@ void	print_character(int m_x, int m_y, int x, int y)
 	}
 	else
 	{
-		ft_putchar('o');
+		ft_putchar('B');
 	}
 }
 
-void	rush00(int max_x, int max_y)
+void	rush02(int max_x, int max_y)
 {
 	int x;
 	int y;

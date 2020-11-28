@@ -49,8 +49,8 @@ void	rush01(int max_x, int max_y)
 				x++;
 			}
 			y++;
-			ft_putchar('\n');
 			x = 1;
+			ft_putchar('\n');
 		}
 	}
 }
