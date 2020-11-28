@@ -12,45 +12,45 @@
 
 void	ft_putchar(char c);
 
-void	print_character(int a, int b, int c, int r)
+void	print_character(int m_x, int m_y, int x, int y)
 {
-	if ((r == 1 && c == 1) || ((r == b && c == a) && b > 1 && a > 1))
+	if ((x > 1 && x < m_x) && (y == 1 || y == m_y))
 	{
-		ft_putchar('/');
+		ft_putchar('-');
 	}
-	else if ((r == 1 && c == a) || (r == b && c == 1))
+	else if ((y > 1 && y < m_y) && (x == 1 || x == m_x))
 	{
-		ft_putchar('\\');
+		ft_putchar('|');
 	}
-	else if (r > 1 && r < b && c > 1 && c < a)
+	else if (y > 1 && y < m_y && x > 1 && x < m_x)
 	{
 		ft_putchar(' ');
 	}
 	else
 	{
-		ft_putchar('*');
+		ft_putchar('o');
 	}
 }
 
-void	rush01(int a, int b)
+void	rush00(int max_x, int max_y)
 {
-	int c;
-	int r;
+	int x;
+	int y;
 
-	c = 1;
-	r = 1;
-	if (a > 0 && b > 0)
+	x = 1;
+	y = 1;
+	if (max_x > 0 && max_y > 0)
 	{
-		while (r <= b)
+		while (y <= max_y)
 		{
-			while (c <= a)
+			while (x <= max_x)
 			{
-				print_character(a, b, c, r);
-				c++;
+				print_character(max_x, max_y, x, y);
+				x++;
 			}
-			r++;
+			y++;
 			ft_putchar('\n');
-			c = 1;
+			x = 1;
 		}
 	}
 }
