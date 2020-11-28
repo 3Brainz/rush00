@@ -32,7 +32,7 @@ void	print_character(int m_x, int m_y, int x, int y)
 	}
 }
 
-void	rush00(int max_x, int max_y)
+void	rush(int max_x, int max_y)
 {
 	int x;
 	int y;

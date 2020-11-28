@@ -14,13 +14,13 @@ void	ft_putchar(char c);
 
 void	print_character(int m_x, int m_y, int x, int y)
 {
-	if ((y == 1 && x == 1) || ((y == m_y && x == m_x) && m_y > 1 && m_x > 1))
+	if ((x == 1 && y == 1) || (x == m_x && y == m_y && m_x != 1 && m_y != 1))
 	{
-		ft_putchar('/');
+		ft_putchar('A');
 	}
-	else if ((y == 1 && x == m_x) || (y == m_y && x == 1))
+	else if ((x == m_x && y == 1) || (x == 1 && y == m_y))
 	{
-		ft_putchar('\\');
+		ft_putchar('C');
 	}
 	else if (y > 1 && y < m_y && x > 1 && x < m_x)
 	{
@@ -28,7 +28,7 @@ void	print_character(int m_x, int m_y, int x, int y)
 	}
 	else
 	{
-		ft_putchar('*');
+		ft_putchar('B');
 	}
 }
 
